@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/davidbayona/Documents/Projects/Pokemon/Pokemon/main'
+relocations:     []
+...
