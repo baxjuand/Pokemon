@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main ()
@@ -6,6 +7,7 @@ int main ()
 
     string playerName;
     int pokemonChoice;
+    string chosenPokemon;
 
     cout << "Professor Oak:" << endl;
     cout << "Ah, Trainer!" << endl;
@@ -23,29 +25,26 @@ int main ()
 
     cin >> pokemonChoice;
 
-    if (pokemonChoice == 1)
+    switch(pokemonChoice)
     {
+        case 1:
+        chosenPokemon = "Bulbasaur";
         cout << "You chose Bulbasaur! A wise choice." << endl;
-    }
+        break;
 
-    else if (pokemonChoice == 2)
-    {
+        case 2:
+        chosenPokemon = "Charmander";
         cout << "You chose Charmander! A fiery choice." << endl;
-    }
+        break;
 
-    else if (pokemonChoice == 3)
-    {
+        case 3:
+        chosenPokemon = "Squirtle";
         cout << "You chose Squirtle! A cool choice." << endl;
-    }
+        break;
 
-    else if (pokemonChoice == 7)
-    {
+        default:
+        chosenPokemon = "Pikachu";
         cout << "You saw that other pokéball, didn't you...?\nHere, you can have Pikachu!" << endl;
-    }
-
-    else
-    {
-        cout << "Invalid choice. Please restart the game." << endl;
     }
 
     cout << "Ah, an excellent choice!" << endl;
