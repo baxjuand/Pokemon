@@ -7,8 +7,13 @@ int main ()
     string playerName;
     int pokemonChoice;
 
-    cout << "Hi! Welcome to the world of Pokémon! My name is Professor Oak." << endl;
-    cout << "What is your name trainer? " << endl;
+    cout << "Professor Oak:" << endl;
+    cout << "Ah, Trainer!" << endl;
+    cout << "Welcome to the world of Pokémon!" << endl;
+    cout << "Today is a momentous day—you’ll be choosing your very first Pokémon." << endl;
+    cout << "Every great Trainer remembers this moment for the rest of their lives." << endl;
+    cout << "So, choose wisely, young one!" << endl;
+    cout << "What is your name, trainer? " << endl;
 
     cin >> playerName;
 
@@ -35,13 +40,20 @@ int main ()
 
     else if (pokemonChoice == 7)
     {
-        cout << "You saw that other pokéball, didn't you?\n Here, you can have Pikachu!" << endl;
+        cout << "You saw that other pokéball, didn't you...?\nHere, you can have Pikachu!" << endl;
     }
 
     else
     {
         cout << "Invalid choice. Please restart the game." << endl;
     }
+
+    cout << "Ah, an excellent choice!" << endl;
+    cout << "But beware, " << playerName << "," << endl;
+    cout << "this is only the beginning." << endl;
+    cout << "Your journey is about to unfold." << endl;
+    cout << "Now let’s see if you’ve got what it takes to keep going!" << endl;
+    cout << "Good luck, and remember… Choose wisely!" << endl;
 
     return 0;
 }
