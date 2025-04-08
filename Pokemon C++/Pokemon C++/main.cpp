@@ -23,29 +23,42 @@ enum class PokemonType
 class Pokemon
 {
     public:
-        string name;
-        PokemonType type;
-        int health;
+    string name;
+    PokemonType type;
+    int health;
 
 
-        // 2 Constructors
-        Pokemon()
-        {
-            
-        }
+    // 2 Constructors
+    Pokemon()
+    {
+        name = "Pikachu";
+        type = PokemonType::Electric;
+        health = 10;
+        cout << "Pokemon " << name << " created with default constructor" << endl;
+    }
 
-        Pokemon(string p_name, PokemonType p_type, int p_health)
-        {
-            name = p_name;
-            type = p_type;
-            health = p_health;
-        }
+    Pokemon(string p_name, PokemonType p_type, int p_health)
+    {
+        name = p_name;
+        type = p_type;
+        health = p_health;
+        cout << "Pokemon " << name << " created with parametrized constructor" << endl;
+    }
+    
+    Pokemon(const Pokemon &other)
+    {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+        cout << "Pokemon " << name << " created with copy constructor" << endl;
+        
+    }
 
-        //Attack Function
-        void Attack()
-        {
-            cout << name << " attacks wtih a powerful move!" << endl;
-        }
+    //Attack Function
+    void Attack()
+    {
+        cout << name << " attacks wtih a powerful move!" << endl;
+    }
 };
 
 class Player
@@ -53,8 +66,29 @@ class Player
     public:
     string name;
     Pokemon chosenPokemon;
+    
+    Player()
+    {
+        name = "Trainer";
+        chosenPokemon = Pokemon();
+        cout << "A new player named " << name << " has been created with the default constructor" << endl;
+    }
+    
+    Player(string p_name, Pokemon p_chosenPokemon)
+    {
+        name = p_name;
+        chosenPokemon = p_chosenPokemon;
+        cout << "A new player named " << name << " has been created with the parametrized constructor" << endl;
+    }
+    
+    Player(const Player &other)
+    {
+        name = other.name;
+        chosenPokemon = other.chosenPokemon;
+        cout << "A new player named " << name << " has been created with the copy constructor" << endl;
+    }
 
-    //Choose Pokémon
+    //Function to Choose Pokémon
     void choosePokemon(int choice)
     {
         switch ((PokemonChoice)choice)
@@ -114,8 +148,8 @@ class ProfessorOak
     {
         cout << name << ": What is your name, trainer? " << endl;
         getline(cin, player.name);
-        cout << name << "Nice to meet you, " << player.name << "!" << endl;
-        cout << name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!\n";
+        cout << name << ": Nice to meet you, " << player.name << "!" << endl;
+        cout << name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!" << endl;
         
         //Pokemon choices presentation
         cout << name << ": I have three Pokémon you can choose from to start your joureny!" << endl;
