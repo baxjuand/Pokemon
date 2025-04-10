@@ -9,6 +9,7 @@ void clearConsole()
 
 void waitForEnter()
 {
+    cout << "Press Enter to continue)" << endl;
     cin.get();
 }
 
