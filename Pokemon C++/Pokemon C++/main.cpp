@@ -4,7 +4,8 @@ using namespace std;
 
 void clearConsole()
 {
-    //Will not implement as I'm on a mac.
+    system("clear");
+    //Will not work as I'm on a mac.
 }
 
 void waitForEnter()
@@ -163,6 +164,7 @@ class ProfessorOak
         waitForEnter();
         cout << name << ": So, choose wisely, young one!" << endl;
         waitForEnter();
+        clearConsole();
         
     }
     
@@ -175,6 +177,7 @@ class ProfessorOak
         waitForEnter();
         cout << name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!" << endl;
         waitForEnter();
+        clearConsole();
         
         //Pokemon choices presentation
         cout << name << ": I have three Pokémon you can choose from to start your joureny!" << endl;
@@ -193,6 +196,7 @@ class ProfessorOak
         cout << name << ": Are you ready to make a choice? (Type the number fo your choice:" << endl;
         cin >> choice;
         player.choosePokemon(choice);
+        clearConsole();
         
     }
     
@@ -225,11 +229,83 @@ class ProfessorOak
         waitForEnter();
         cout << "Professor Oak: But first... let's just pretend I didn't forget to set up the actual game loop... Ahem, onwards!" << endl;
         waitForEnter();
+        clearConsole();
         
 
     }
     
 };
+
+void gameLoop(Player &player)
+{
+    bool keepPlaying = true;
+    int choice;
+    char quitChoice;
+    
+    while(keepPlaying)
+    {
+        clearConsole();
+        
+        cout << "What would you like to do next " << player.name << endl;
+        cout << "1. Battle Wild Pokémon" << endl;
+        cout << "2. Visit PokeCenter" << endl;
+        cout << "3. Challenge Gyms" << endl;
+        cout << "4. Enter Pokémon League" << endl;
+        cout << "5. Quit" << endl;
+        cout << "Enter your choice:" << endl;
+        cin >> choice;
+        
+        switch(choice)
+        {
+            case 1:
+            {
+                cout << "UUUoooOH a wild kitchen appears. Time for dinner!" << endl;
+                break;
+            }
+            
+            case 2:
+            {
+                cout << "The free clinic it is" << endl;
+                break;
+            }
+                
+            case 3:
+            {
+                cout << "Do you even lift, bro?" << endl;
+                break;
+            }
+            
+            case 4:
+            {
+                cout << "You're registering with what, now?" << endl;
+                break;
+            }
+            
+            case 5:
+            {
+                cout << "Bye Felicia" << endl;
+                cout << "Are you sure you want to quit? (y/n)" << endl;
+                
+                cin >> quitChoice;
+                if(quitChoice == 'y' || quitChoice == 'Y')
+                {
+                    keepPlaying = false;
+                }
+                break;
+            }
+                
+            default:
+            {
+                cout << "Wrong choice, try again" << endl;
+                break;
+            }
+        }
+        
+        waitForEnter();
+    }
+    
+    cout << "Goodbye, " << player.name << "! Thanks for playing!" << endl;;
+}
 
 
 
