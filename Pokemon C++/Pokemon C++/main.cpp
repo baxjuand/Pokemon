@@ -1,6 +1,8 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 using namespace std;
 
 void clearConsole()
@@ -14,25 +16,6 @@ void waitForEnter()
     cout << "(Press Enter to continue)" << endl;
     cin.get();
 }
-
-enum class PokemonChoice
-{
-    Bulbasaur = 1,
-    Charmander,
-    Squirtle,
-    Pikachu,
-    MaxValue = 0xff
-};
-
-enum class PokemonType
-{
-    Fire,
-    Electric,
-    Water,
-    Grass,
-    Normal,
-    MaxValue = 0xff //Optimization for the compiler. Good optimization practice.
-};
 
 //Pokemon class definition
 class Pokemon
@@ -341,4 +324,4 @@ int main ()
     
     return 0;
     
-#include "Header.h"
+}
