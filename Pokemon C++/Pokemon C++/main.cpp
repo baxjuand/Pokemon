@@ -1,16 +1,17 @@
 #include <iostream>
+#include <limits>
 #include <string>
 using namespace std;
 
 void clearConsole()
 {
-    system("clear");
+    (void)system("clear");
     //Will not work as I'm on a mac.
 }
 
 void waitForEnter()
 {
-    cout << "Press Enter to continue)" << endl;
+    cout << "(Press Enter to continue)" << endl;
     cin.get();
 }
 
@@ -33,6 +34,7 @@ enum class PokemonType
     MaxValue = 0xff //Optimization for the compiler. Good optimization practice.
 };
 
+//Pokemon class definition
 class Pokemon
 {
     public:
@@ -41,14 +43,15 @@ class Pokemon
     int health;
 
 
-    //Constructors
+    //Default constructors
     Pokemon()
     {
-        name = "Pikachu";
-        type = PokemonType::Electric;
-        health = 10;
+        name = "Unknown";
+        type = PokemonType::Normal;
+        health = 20;
     }
-
+    
+    //Parametrized constructor
     Pokemon(const string &p_name, PokemonType p_type, int p_health)
     {
         name = p_name;
@@ -56,6 +59,7 @@ class Pokemon
         health = p_health;
     }
     
+    //Copy constructor
     Pokemon(const Pokemon &other)
     {
         name = other.name;
@@ -77,6 +81,7 @@ class Pokemon
     }
 };
 
+//Player class definition
 class Player
 {
     public:
@@ -134,18 +139,20 @@ class Player
         } 
         
         cout << name << ", you chose " << chosenPokemon.name << endl;
+        waitForEnter();
     }
 
 
 };
 
+//Professor Oak class definition
 class ProfessorOak
 {
     public:
     string name;
     int choice;
     
-    //Constructor
+    //Parametrized constructor
     ProfessorOak(const string &p_name)
     {
         name = p_name;
@@ -154,6 +161,8 @@ class ProfessorOak
     //Function text to greet the player
     void greetPlayer(Player &player)
     {
+        clearConsole();
+        
         cout << name << ": Ah, Trainer!" << endl;
         waitForEnter();
         cout << name << ": Welcome to the world of Pokémon!" << endl;
@@ -164,20 +173,22 @@ class ProfessorOak
         waitForEnter();
         cout << name << ": So, choose wisely, young one!" << endl;
         waitForEnter();
-        clearConsole();
+        
         
     }
     
     //Function to offer choices to the player
     void offerPokemonChoices(Player &player)
     {
+        clearConsole();
+        
         cout << name << ": What is your name, trainer? " << endl;
         getline(cin, player.name);
         cout << name << ": Nice to meet you, " << player.name << "!" << endl;
         waitForEnter();
         cout << name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!" << endl;
         waitForEnter();
-        clearConsole();
+        
         
         //Pokemon choices presentation
         cout << name << ": I have three Pokémon you can choose from to start your joureny!" << endl;
@@ -193,16 +204,17 @@ class ProfessorOak
         cout << name << ": Choose wiseley!" << endl;
         waitForEnter();
         
-        cout << name << ": Are you ready to make a choice? (Type the number fo your choice:" << endl;
+        cout << name << ": Are you ready to make a choice? (Type the number of your choice:" << endl;
         cin >> choice;
         player.choosePokemon(choice);
-        clearConsole();
         
     }
     
     //Function to introduce main quest
     void explainMainQuest(Player &player)
     {
+        clearConsole();
+        
         cout << "Professor Oak: Oak-ay " << player.name << " I am about to explain you about your upcoming grand adventure." << endl;
         waitForEnter();
         cout << "Professor Oak: You see, becoming a Pokémon Master is no easy feat. It takes courage, wisdom, and a bit of luck." << endl;
@@ -229,7 +241,7 @@ class ProfessorOak
         waitForEnter();
         cout << "Professor Oak: But first... let's just pretend I didn't forget to set up the actual game loop... Ahem, onwards!" << endl;
         waitForEnter();
-        clearConsole();
+        
         
 
     }
@@ -323,6 +335,10 @@ int main ()
     //Main Quest Explanation
     professorOak.explainMainQuest(player);
     
-
+    //Start the gameloop
+    gameLoop(player);
+    
+    
     return 0;
+    
 }
