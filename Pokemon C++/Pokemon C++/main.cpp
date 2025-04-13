@@ -1,5 +1,6 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
+#include "Player.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>
@@ -54,6 +55,7 @@ class Pokemon
 };
 
 //Player class definition
+/*
 class Player
 {
     public:
@@ -85,30 +87,30 @@ class Player
         {
             case PokemonChoice::Charmander:
             {
-                chosenPokemon = Pokemon("Charmander", PokemonType::Fire, 100); 
-                break; 
+                chosenPokemon = Pokemon("Charmander", PokemonType::Fire, 100);
+                break;
             }
                     
             case PokemonChoice::Bulbasaur:
             {
-                chosenPokemon = Pokemon("Bulbasaur", PokemonType::Grass, 100); 
-                break; 
+                chosenPokemon = Pokemon("Bulbasaur", PokemonType::Grass, 100);
+                break;
 
-            } 
+            }
                     
             case PokemonChoice::Squirtle:
             {
-                chosenPokemon = Pokemon("Squirtle", PokemonType::Water, 100); 
-                break; 
+                chosenPokemon = Pokemon("Squirtle", PokemonType::Water, 100);
+                break;
             }
                    
             default:
             {
-                chosenPokemon = Pokemon("Pikachu", PokemonType::Electric, 100); 
-                break; 
-            } 
+                chosenPokemon = Pokemon("Pikachu", PokemonType::Electric, 100);
+                break;
+            }
                     
-        } 
+        }
         
         cout << name << ", you chose " << chosenPokemon.name << endl;
         Utility::waitForEnter();
@@ -116,6 +118,7 @@ class Player
 
 
 };
+*/
 
 //Professor Oak class definition
 class ProfessorOak
