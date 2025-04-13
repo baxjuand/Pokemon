@@ -1,6 +1,6 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
-#include "Player.hpp"
+
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>
@@ -53,6 +53,8 @@ class Pokemon
         cout << name << " attacks wtih a powerful move!" << endl;
     }
 };
+
+#include "Player.hpp"
 
 //Player class definition
 /*
