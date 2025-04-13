@@ -5,9 +5,6 @@
 //  Created by David Bayona on 12/04/25.
 //
 
-#include "PokemonType.hpp"
-#include "PokemonChoice.hpp"
-#include "Utility.hpp"
 #include <string>
 using namespace std;
 
