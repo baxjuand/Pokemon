@@ -4,7 +4,6 @@
 //
 //  Created by David Bayona on 12/04/25.
 //
-
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>

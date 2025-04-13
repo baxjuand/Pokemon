@@ -4,12 +4,13 @@
 //
 //  Created by David Bayona on 12/04/25.
 //
-
-#include "Player.hpp"
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
+#include "Pokemon.hpp"
+#include "Player.hpp"
 #include "Utility.hpp"
 #include <iostream>
+#include <string>
 using namespace std;
 
 

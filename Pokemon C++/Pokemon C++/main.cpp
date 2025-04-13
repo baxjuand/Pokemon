@@ -1,6 +1,6 @@
 #include "PokemonType.hpp"
-#include "PokemonChoice.hpp"
-
+#include "Pokemon.hpp"
+#include "Player.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>
@@ -8,6 +8,7 @@
 using namespace std;
 
 //Pokemon class definition
+/*
 class Pokemon
 {
     public:
@@ -48,13 +49,12 @@ class Pokemon
     }
 
     //Attack Function
-    void Attack()
+    void attack()
     {
         cout << name << " attacks wtih a powerful move!" << endl;
     }
 };
-
-#include "Player.hpp"
+*/
 
 //Player class definition
 /*
