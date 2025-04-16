@@ -14,5 +14,8 @@ enum class PokemonType
     Water,
     Grass,
     Normal,
+    Rock,
+    Insect,
+    Flying,
     MaxValue = 0xff //Optimization for the compiler. Good optimization practice.
 };
