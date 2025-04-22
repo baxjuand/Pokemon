@@ -10,31 +10,27 @@
 #include "Game.hpp"
 #include "Utility.hpp"
 #include "Grass.hpp"
+#include "WildEncounterManager.hpp"
 #include <iostream>
 using namespace std;
 
+Game::Game()
+{
+    forestGrass =
+    {70,
+    {Pokemon("Pidgey", PokemonType::Normal, 40),
+     Pokemon("Caterpie", PokemonType::Bug, 35),
+     Pokemon("Zubat", PokemonType::Flying, 30)},
+        "Forest"};
+}
 
-void gameLoop(Player &player)
+void Game::gameLoop(Player &player)
 {
     bool keepPlaying = true;
     int choice;
     char quitChoice;
     
-    Grass caveGrass
-    {
-        80,
-        {{"Zubat", PokemonType::Normal, 25}, {"Geodude", PokemonType::Rock, 45}},
-        "Cave"
-      
-    };
     
-    Grass forestGrass
-    {
-        80,
-        {{"Zubat", PokemonType::Normal, 25}, {"Caterpie", PokemonType::Insect, 12}, {"Pidgey", PokemonType::Flying, 20}},
-        "Cave"
-      
-    };
     
     while(keepPlaying)
     {
@@ -53,7 +49,10 @@ void gameLoop(Player &player)
         {
             case 1:
             {
-                cout << "UUUoooOH a wild kitchen appears. Time for dinner!" << endl;
+                WildEncounterManager encounterManager;
+                Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                
+                cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
                 break;
             }
             
