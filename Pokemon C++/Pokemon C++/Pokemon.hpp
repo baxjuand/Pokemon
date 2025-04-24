@@ -4,7 +4,7 @@
 //
 //  Created by David Bayona on 13/04/25.
 //
-
+#pragma once
 #include <string>
 using namespace std;
 
@@ -16,6 +16,7 @@ public:
     string name;
     PokemonType type;
     int health;
+    int maxHealth;
     
     //Constructors
     Pokemon();
@@ -25,6 +26,12 @@ public:
     //Destructor
     ~Pokemon();
     
-    void attack();
+    void attack(Pokemon& target);
+    
+    //Take Damage function
+    void takeDamage(int damage);
+    
+    //Alive status check function
+    bool isFainted() const;
     
 };

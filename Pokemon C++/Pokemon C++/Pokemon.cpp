@@ -20,7 +20,7 @@ Pokemon::Pokemon()
 }
 
 //Parametrized constructor
-Pokemon::Pokemon(const string &p_name, PokemonType p_type, int p_health)
+Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health)
 {
     name = p_name;
     type = p_type;
@@ -28,7 +28,7 @@ Pokemon::Pokemon(const string &p_name, PokemonType p_type, int p_health)
 }
 
 //Copy constructor
-Pokemon::Pokemon(const Pokemon &other)
+Pokemon::Pokemon(const Pokemon& other)
 {
     name = other.name;
     type = other.type;
@@ -43,7 +43,27 @@ Pokemon::~Pokemon()
 }
 
 //Attack Function
-void Pokemon::attack()
+void Pokemon::attack(Pokemon& target)
 {
-    cout << name << " attacks wtih a powerful move!" << endl;
+    int damage = 10;
+    
+    cout << name << " attacks " << target.name << "for " << damage << "damage!" << endl;
+    
+    target.takeDamage(damage);
+}
+
+//Take Damage Function
+void Pokemon::takeDamage(int damage)
+{
+    health -= damage;
+    if(health <= 0)
+    {
+        health = 0;
+    }
+}
+
+//Alive Status Function
+bool Pokemon::isFainted() const
+{
+    return (health <= 0);
 }

@@ -4,7 +4,7 @@
 //
 //  Created by David Bayona on 13/04/25.
 //
-
+#pragma once
 #include "Grass.hpp"
 
 class Player;
@@ -16,7 +16,7 @@ private:
     
 public:
     Game();
-    void gameLoop(Player &player);
+    void gameLoop(Player& player);
     
 };
 

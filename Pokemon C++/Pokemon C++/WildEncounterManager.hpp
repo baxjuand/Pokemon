@@ -5,7 +5,9 @@
 //  Created by David Bayona on 17/04/25.
 //
 
+#pragma once
 #include "Grass.hpp"
+#include "Pokemon.hpp"
 #include <vector>
 
 class WildEncounterManager
@@ -16,6 +18,6 @@ public:
     
     WildEncounterManager();
     
-    WildPokemon getRandomPokemonFromGrass(const Grass &grass);
+    Pokemon getRandomPokemonFromGrass(const Grass &grass);
     
 };

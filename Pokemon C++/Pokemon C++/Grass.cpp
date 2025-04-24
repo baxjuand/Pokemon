@@ -19,7 +19,7 @@ Grass caveGrass
 Grass forestGrass
 {
     80,
-    {{"Zubat", PokemonType::Normal, 25}, {"Caterpie", PokemonType::Insect, 12}, {"Pidgey", PokemonType::Flying, 20}},
+    {{"Zubat", PokemonType::Normal, 25}, {"Caterpie", PokemonType::Bug, 12}, {"Pidgey", PokemonType::Flying, 20}},
     "Cave"
   
 };

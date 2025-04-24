@@ -4,6 +4,7 @@
 //
 //  Created by David Bayona on 12/04/25.
 //
+#pragma once
 
 // Definition of the enum class for Pokemon Choices
 enum class PokemonChoice

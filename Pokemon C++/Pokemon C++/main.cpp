@@ -16,6 +16,7 @@ int main ()
     Pokemon bulbasaur("Bulbasaur", PokemonType::Grass, 100);
     Player player("Juanda", bulbasaur);
     ProfessorOak professorOak("Professor Oak");
+    Game game;
     
     //Greeting and Pokemon Choice
     professorOak.greetPlayer(player);
@@ -25,7 +26,7 @@ int main ()
     professorOak.explainMainQuest(player);
     
     //Start the gameloop
-    gameLoop(player);
+    game.gameLoop(player);
     
     
     return 0;

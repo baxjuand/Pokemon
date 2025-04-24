@@ -24,7 +24,7 @@ Game::Game()
         "Forest"};
 }
 
-void Game::gameLoop(Player &player)
+void Game::gameLoop(Player& player)
 {
     bool keepPlaying = true;
     int choice;

@@ -6,7 +6,6 @@
 //
 
 #include "WildEncounterManager.hpp"
-#include "Grass.hpp"
 #include <cstdlib>
 #include <ctime>
 
@@ -16,8 +15,11 @@ WildEncounterManager::WildEncounterManager()
     
 }
 
-WildPokemon WildEncounterManager::getRandomPokemonFromGrass(<#const Grass &grass#>)
+Pokemon WildEncounterManager::getRandomPokemonFromGrass(const Grass &grass)
 {
-    int randomIndex = rand() % Grass.wildPokemonList.size();
-    return Grass.wildPokemonList[randomIndex];
+    static Pokemon returnedPokemon;
+    
+    int randomIndex = rand() % grass.wildPokemonList.size();
+    returnedPokemon = grass.wildPokemonList[randomIndex];
+    return returnedPokemon;
 }
