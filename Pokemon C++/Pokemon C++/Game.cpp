@@ -11,6 +11,7 @@
 #include "Utility.hpp"
 #include "Grass.hpp"
 #include "WildEncounterManager.hpp"
+#include "BattleManager.hpp"
 #include <iostream>
 using namespace std;
 
@@ -26,9 +27,11 @@ Game::Game()
 
 void Game::gameLoop(Player& player)
 {
+    BattleManager battleManager;
     bool keepPlaying = true;
     int choice;
     char quitChoice;
+    
     
     
     
@@ -45,12 +48,16 @@ void Game::gameLoop(Player& player)
         cout << "Enter your choice:" << endl;
         cin >> choice;
         
+        Utility::clearInputBuffer();
+        
         switch(choice)
         {
             case 1:
             {
                 WildEncounterManager encounterManager;
                 Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                
+                battleManager.startBattle(player, encounteredPokemon);
                 
                 cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
                 break;

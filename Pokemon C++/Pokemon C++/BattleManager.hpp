@@ -5,13 +5,21 @@
 //  Created by David Bayona on 21/04/25.
 //
 #pragma once
-#include "Pokemon.hpp"
+
+class Pokemon;
+class Player;
 
 class BattleManager
 {
-  
-    BattleManager();
+public:
+    
+    void startBattle(Player& player, Pokemon& wildPokemon);
+    
+private:
     
     void battle(Pokemon& playerPokemon, Pokemon& wildPokemon);
+    
+    void handleBattleOutcome (Player& player, bool playerWon);
+    
     
 };
