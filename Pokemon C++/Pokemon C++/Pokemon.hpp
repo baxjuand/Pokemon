@@ -17,6 +17,7 @@ public:
     PokemonType type;
     int health;
     int maxHealth;
+    int attackPower;
     
     //Constructors
     Pokemon();
@@ -33,5 +34,8 @@ public:
     
     //Alive status check function
     bool isFainted() const;
+    
+    //Heal method
+    void heal();
     
 };

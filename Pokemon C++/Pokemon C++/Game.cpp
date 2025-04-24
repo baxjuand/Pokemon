@@ -58,7 +58,9 @@ void Game::gameLoop(Player& player)
             
             case 2:
             {
-                cout << "The free clinic it is" << endl;
+                cout << "You enter a PokéCenter" << endl;
+                player.chosenPokemon.heal();
+                cout << player.chosenPokemon.name << "'s health is fully restored!!" << endl;
                 break;
             }
                 
