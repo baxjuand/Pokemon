@@ -7,22 +7,26 @@
 #pragma once
 #include <string>
 using namespace std;
+using namespace N_Pokemon;
 
-//class Pokemon;
-
-//Player class definition
-class Player
+namespace N_Player
 {
-public:
-    string name;
-    Pokemon chosenPokemon;
-    
-    
-    //Constructors
-    Player();
-    Player(const string &p_name, const Pokemon &p_chosenPokemon);
-    Player(const Player &other);
-    
-    //Function to Choose Pokémon
-    void choosePokemon(int choice);
-};
+
+    //Player class definition
+    class Player
+    {
+    public:
+        string name;
+        Pokemon chosenPokemon;
+        
+        
+        //Constructors
+        Player();
+        Player(const string &p_name, const Pokemon &p_chosenPokemon);
+        Player(const Player &other);
+        
+        //Function to Choose Pokémon
+        void choosePokemon(int choice);
+    };
+
+}

@@ -13,13 +13,17 @@
 #include <vector>
 using namespace std;
 
-struct Grass
+namespace N_Pokemon
 {
-    
-    int encounterRate;
-    vector <Pokemon> wildPokemonList;
-    string environmentType;
-    
-};
+
+    struct Grass
+    {
+        
+        int encounterRate;
+        vector <Pokemon> wildPokemonList;
+        string environmentType;
+        
+    };
+}
 
 #endif

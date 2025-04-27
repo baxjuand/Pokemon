@@ -6,18 +6,22 @@
 //
 #pragma once
 #include "Grass.hpp"
+using namespace N_Player;
 
-class Player;
-
-class Game
+namespace N_Main
 {
-private:
-    Grass forestGrass;
-    
-public:
-    Game();
-    void gameLoop(Player& player);
-    
-};
+    class Game
+    {
+    private:
+        Grass forestGrass;
+        
+    public:
+        Game();
+        void gameLoop(Player& player);
+        
+    };
+}
+
+
 
 

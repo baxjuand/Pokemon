@@ -7,24 +7,29 @@
 #pragma once
 #include <string>
 using namespace std;
+using namespace N_Player;
 
-class Player;
-
-class ProfessorOak
+namespace N_Character
 {
-public:
-    string name;
-    int choice;
-    
-    //Parametrized constructor
-    ProfessorOak(const string& p_name);
-    
-    //Function text to greet the player
-    void greetPlayer(Player& player);
-    
-    //Function to offer choices to the player
-    void offerPokemonChoices(Player& player);
-    
-    //Function to introduce main quest
-    void explainMainQuest(Player& player);
-};
+
+    class ProfessorOak
+    {
+    public:
+        string name;
+        int choice;
+        
+        //Parametrized constructor
+        ProfessorOak(const string& p_name);
+        
+        //Function text to greet the player
+        void greetPlayer(Player& player);
+        
+        //Function to offer choices to the player
+        void offerPokemonChoices(Player& player);
+        
+        //Function to introduce main quest
+        void explainMainQuest(Player& player);
+    };
+}
+
+

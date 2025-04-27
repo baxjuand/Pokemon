@@ -11,65 +11,70 @@
 #include <string>
 using namespace std;
 
-//Default constructors
-Pokemon::Pokemon()
+namespace N_Pokemon
 {
-    name = "Unknown";
-    type = PokemonType::Normal;
-    health = 20;
-}
-
-//Parametrized constructor
-Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health)
-{
-    name = p_name;
-    type = p_type;
-    health = p_health;
-}
-
-//Copy constructor
-Pokemon::Pokemon(const Pokemon& other)
-{
-    name = other.name;
-    type = other.type;
-    health = other.health;
-    
-}
-
-//Destructor
-Pokemon::~Pokemon()
-{
-    
-}
-
-//Attack Function
-void Pokemon::attack(Pokemon& target)
-{
-    int damage = attackPower;
-    
-    cout << name << " attacks " << target.name << "for " << damage << "damage!" << endl;
-    
-    target.takeDamage(damage);
-}
-
-//Take Damage Function
-void Pokemon::takeDamage(int damage)
-{
-    health -= damage;
-    if(health <= 0)
+    //Default constructors
+    Pokemon::Pokemon()
     {
-        health = 0;
+        name = "Unknown";
+        type = PokemonType::Normal;
+        health = 20;
     }
+
+    //Parametrized constructor
+    Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health)
+    {
+        name = p_name;
+        type = p_type;
+        health = p_health;
+    }
+
+    //Copy constructor
+    Pokemon::Pokemon(const Pokemon& other)
+    {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+        
+    }
+
+    //Destructor
+    Pokemon::~Pokemon()
+    {
+        
+    }
+
+    //Attack Function
+    void Pokemon::attack(Pokemon& target)
+    {
+        int damage = attackPower;
+        
+        cout << name << " attacks " << target.name << "for " << damage << "damage!" << endl;
+        
+        target.takeDamage(damage);
+    }
+
+    //Take Damage Function
+    void Pokemon::takeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            health = 0;
+        }
+    }
+
+    //Alive Status Function
+    bool Pokemon::isFainted() const
+    {
+        return (health <= 0);
+    }
+
+    //Heal Method
+    void Pokemon::heal()
+    {
+        health = maxHealth;
+    }
+
 }
 
-//Alive Status Function
-bool Pokemon::isFainted() const
-{
-    return (health <= 0);
-}
-
-//Heal Method
-void Pokemon::heal()
-{
-    health = maxHealth;
-}

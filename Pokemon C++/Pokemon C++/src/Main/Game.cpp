@@ -14,97 +14,105 @@
 #include "BattleManager.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Player;
+using namespace N_Battle;
+using namespace N_Pokemon;
 
-Game::Game()
+namespace N_Main
 {
-    forestGrass =
-    {70,
-    {Pokemon("Pidgey", PokemonType::Normal, 40),
-     Pokemon("Caterpie", PokemonType::Bug, 35),
-     Pokemon("Zubat", PokemonType::Flying, 30)},
-        "Forest"};
-}
-
-void Game::gameLoop(Player& player)
-{
-    BattleManager battleManager;
-    bool keepPlaying = true;
-    int choice;
-    char quitChoice;
-    
-    
-    
-    
-    while(keepPlaying)
+    Game::Game()
     {
-        Utility::clearConsole();
+        forestGrass =
+        {70,
+        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40),
+         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 35),
+         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 30)},
+            "Forest"};
+    }
+
+    void Game::gameLoop(Player& player)
+    {
+        BattleManager battleManager;
+        bool keepPlaying = true;
+        int choice;
+        char quitChoice;
         
-        cout << "What would you like to do next " << player.name << endl;
-        cout << "1. Battle Wild Pokémon" << endl;
-        cout << "2. Visit PokeCenter" << endl;
-        cout << "3. Challenge Gyms" << endl;
-        cout << "4. Enter Pokémon League" << endl;
-        cout << "5. Quit" << endl;
-        cout << "Enter your choice:" << endl;
-        cin >> choice;
         
-        Utility::clearInputBuffer();
         
-        switch(choice)
+        
+        while(keepPlaying)
         {
-            case 1:
-            {
-                WildEncounterManager encounterManager;
-                Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-                
-                battleManager.startBattle(player, encounteredPokemon);
-                
-                cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
-                break;
-            }
+            N_Utility::Utility::clearConsole();
             
-            case 2:
-            {
-                cout << "You enter a PokéCenter" << endl;
-                player.chosenPokemon.heal();
-                cout << player.chosenPokemon.name << "'s health is fully restored!!" << endl;
-                break;
-            }
-                
-            case 3:
-            {
-                cout << "Do you even lift, bro?" << endl;
-                break;
-            }
+            cout << "What would you like to do next " << player.name << endl;
+            cout << "1. Battle Wild Pokémon" << endl;
+            cout << "2. Visit PokeCenter" << endl;
+            cout << "3. Challenge Gyms" << endl;
+            cout << "4. Enter Pokémon League" << endl;
+            cout << "5. Quit" << endl;
+            cout << "Enter your choice:" << endl;
+            cin >> choice;
             
-            case 4:
-            {
-                cout << "You're registering with what, now?" << endl;
-                break;
-            }
+            N_Utility::Utility::clearInputBuffer();
             
-            case 5:
+            switch(choice)
             {
-                cout << "Bye Felicia" << endl;
-                cout << "Are you sure you want to quit? (y/n)" << endl;
-                
-                cin >> quitChoice;
-                if(quitChoice == 'y' || quitChoice == 'Y')
+                case 1:
                 {
-                    keepPlaying = false;
+                    WildEncounterManager encounterManager;
+                    Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                    
+                    battleManager.startBattle(player, encounteredPokemon);
+                    
+                    cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
+                    break;
                 }
-                break;
-            }
                 
-            default:
-            {
-                cout << "Wrong choice, try again" << endl;
-                break;
+                case 2:
+                {
+                    cout << "You enter a PokéCenter" << endl;
+                    player.chosenPokemon.heal();
+                    cout << player.chosenPokemon.name << "'s health is fully restored!!" << endl;
+                    break;
+                }
+                    
+                case 3:
+                {
+                    cout << "Do you even lift, bro?" << endl;
+                    break;
+                }
+                
+                case 4:
+                {
+                    cout << "You're registering with what, now?" << endl;
+                    break;
+                }
+                
+                case 5:
+                {
+                    cout << "Bye Felicia" << endl;
+                    cout << "Are you sure you want to quit? (y/n)" << endl;
+                    
+                    cin >> quitChoice;
+                    if(quitChoice == 'y' || quitChoice == 'Y')
+                    {
+                        keepPlaying = false;
+                    }
+                    break;
+                }
+                    
+                default:
+                {
+                    cout << "Wrong choice, try again" << endl;
+                    break;
+                }
             }
+            
+            N_Utility::Utility::waitForEnter();
         }
         
-        Utility::waitForEnter();
+        cout << "Goodbye, " << player.name << "! Thanks for playing!" << endl;;
     }
-    
-    cout << "Goodbye, " << player.name << "! Thanks for playing!" << endl;;
+
 }
+

@@ -6,12 +6,16 @@
 //
 #pragma once
 
-// Definition of the enum class for Pokemon Choices
-enum class PokemonChoice
+namespace N_Pokemon
 {
-    Bulbasaur = 1,
-    Charmander,
-    Squirtle,
-    Pikachu,
-    MaxValue = 0xff
-};
+
+    // Definition of the enum class for Pokemon Choices
+    enum class PokemonChoice
+    {
+        Bulbasaur = 1,
+        Charmander,
+        Squirtle,
+        Pikachu,
+        MaxValue = 0xff
+    };
+}

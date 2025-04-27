@@ -9,13 +9,16 @@
 #include <limits>
 using namespace std;
 
+namespace N_Utility
+{
+
 void Utility::clearConsole()
 {
     (void)system("clear");
     //Will not work as I'm on a mac.
 }
 
-void Utility::waitForEnter()
+void N_Utility::Utility::waitForEnter()
 {
     cout << "(Press Enter to continue)" << endl;
     cin.get();
@@ -24,4 +27,6 @@ void Utility::waitForEnter()
 void Utility::clearInputBuffer()
 {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
 }

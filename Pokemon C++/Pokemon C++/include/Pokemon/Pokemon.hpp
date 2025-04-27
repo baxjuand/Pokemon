@@ -10,32 +10,37 @@ using namespace std;
 
 enum class PokemonType;
 
-class Pokemon
+namespace N_Pokemon
 {
-public:
-    string name;
-    PokemonType type;
-    int health;
-    int maxHealth;
-    int attackPower;
-    
-    //Constructors
-    Pokemon();
-    Pokemon(const string &p_name, PokemonType p_type, int p_health);
-    Pokemon(const Pokemon &other);
-    
-    //Destructor
-    ~Pokemon();
-    
-    void attack(Pokemon& target);
-    
-    //Take Damage function
-    void takeDamage(int damage);
-    
-    //Alive status check function
-    bool isFainted() const;
-    
-    //Heal method
-    void heal();
-    
-};
+    class Pokemon
+    {
+    public:
+        string name;
+        PokemonType type;
+        int health;
+        int maxHealth;
+        int attackPower;
+        
+        //Constructors
+        Pokemon();
+        Pokemon(const string& p_name, PokemonType p_type, int p_health);
+        Pokemon(const Pokemon &other);
+        
+        //Destructor
+        ~Pokemon();
+        
+        void attack(Pokemon& target);
+        
+        //Take Damage function
+        void takeDamage(int damage);
+        
+        //Alive status check function
+        bool isFainted() const;
+        
+        //Heal method
+        void heal();
+        
+    };
+}
+
+

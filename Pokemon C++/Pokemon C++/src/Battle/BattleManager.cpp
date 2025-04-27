@@ -12,84 +12,91 @@
 #include <iostream>
 
 using namespace std;
+using namespace N_Player;
+using namespace N_Pokemon;
 
-void BattleManager::startBattle(Player &player, Pokemon &wildPokemon)
+namespace N_Battle
 {
-    battleState.playerPokemon = &player.chosenPokemon;
-    battleState.wildPokemon = &wildPokemon;
-    battleState.isPlayerTurn = true;
-    battleState.isBattleOngoing = true;
-    
-    cout << "A wild " << wildPokemon.name << " appeared!" << endl;
-    
-    battle();
-}
-
-void BattleManager::battle()
-{
-        
-    while (battleState.isBattleOngoing)
+    void BattleManager::startBattle(Player &player, Pokemon &wildPokemon)
     {
-        //playerPokemon.attack(wildPokemon);
+        battleState.playerPokemon = &player.chosenPokemon;
+        battleState.wildPokemon = &wildPokemon;
+        battleState.isPlayerTurn = true;
+        battleState.isBattleOngoing = true;
         
-        if (battleState.isPlayerTurn)
+        cout << "A wild " << wildPokemon.name << " appeared!" << endl;
+        
+        battle();
+    }
+
+    void BattleManager::battle()
+    {
+            
+        while (battleState.isBattleOngoing)
         {
-            battleState.playerPokemon->attack(*battleState.wildPokemon);
+            //playerPokemon.attack(wildPokemon);
+            
+            if (battleState.isPlayerTurn)
+            {
+                battleState.playerPokemon->attack(*battleState.wildPokemon);
+            }
+            
+            else
+            {
+                battleState.wildPokemon->attack(*battleState.playerPokemon);
+            }
+            
+            updateBattleState();
+            
+            battleState.isPlayerTurn = !battleState.isPlayerTurn;
+            
+            N_Utility::Utility::waitForEnter();
+            
+            
+        }
+        
+            handleBattleOutcome();
+        
+            /*if (!playerPokemon.isFainted())
+            {
+                cout << playerPokemon.name << " has fainted! You loose the battle!" << endl;
+            }
+            
+            else
+            {
+                cout << "You defeated the wild " << wildPokemon.name << endl;
+            }*/
+        
+    }
+
+    void BattleManager::handleBattleOutcome()
+    {
+        if (battleState.playerPokemon->isFainted())
+        {
+            cout << battleState.playerPokemon->name << " has fainted! You lose the battle." << endl;
+            N_Utility::Utility::waitForEnter();
+            cout << "Game Over" << endl;
         }
         
         else
         {
-            battleState.wildPokemon->attack(*battleState.playerPokemon);
+            cout << "You defeated the wild " << battleState.wildPokemon->name << "!" << endl;
         }
-        
-        updateBattleState();
-        
-        battleState.isPlayerTurn = !battleState.isPlayerTurn;
-        
-        Utility::waitForEnter();
-        
-        
     }
-    
-        handleBattleOutcome();
-    
-        /*if (!playerPokemon.isFainted())
-        {
-            cout << playerPokemon.name << " has fainted! You loose the battle!" << endl;
-        }
-        
-        else
-        {
-            cout << "You defeated the wild " << wildPokemon.name << endl;
-        }*/
-    
-}
 
-void BattleManager::handleBattleOutcome()
-{
-    if (battleState.playerPokemon->isFainted())
+    void BattleManager::updateBattleState()
     {
-        cout << battleState.playerPokemon->name << " has fainted! You lose the battle." << endl;
-        Utility::waitForEnter();
-        cout << "Game Over" << endl;
-    }
-    
-    else
-    {
-        cout << "You defeated the wild " << battleState.wildPokemon->name << "!" << endl;
+        if (battleState.playerPokemon->isFainted())
+        {
+            battleState.isBattleOngoing = false;
+        }
+        
+        else if (battleState.wildPokemon->isFainted())
+        {
+            battleState.isBattleOngoing = false;
+        }
     }
 }
 
-void BattleManager::updateBattleState()
-{
-    if (battleState.playerPokemon->isFainted())
-    {
-        battleState.isBattleOngoing = false;
-    }
-    
-    else if (battleState.wildPokemon->isFainted())
-    {
-        battleState.isBattleOngoing = false;
-    }
-}
+
 

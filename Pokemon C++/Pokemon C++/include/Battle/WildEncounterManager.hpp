@@ -10,6 +10,11 @@
 #include "Pokemon.hpp"
 #include <vector>
 
+using namespace N_Pokemon;
+
+namespace N_Battle
+{
+
 class WildEncounterManager
 {
 public:
@@ -21,3 +26,5 @@ public:
     Pokemon getRandomPokemonFromGrass(const Grass &grass);
     
 };
+
+}

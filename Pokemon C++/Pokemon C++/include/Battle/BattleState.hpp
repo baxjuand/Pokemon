@@ -5,13 +5,20 @@
 //  Created by David Bayona on 24/04/25.
 //
 #pragma once
+#include "Pokemon.hpp"
+using namespace N_Pokemon;
 
-class Pokemon;
-
-struct BattleState
+namespace N_Battle
 {
-    Pokemon* playerPokemon;
-    Pokemon* wildPokemon;
-    bool isPlayerTurn;
-    bool isBattleOngoing;
-};
+
+    //class Pokemon;
+
+    struct BattleState
+    {
+        Pokemon* playerPokemon;
+        Pokemon* wildPokemon;
+        bool isPlayerTurn;
+        bool isBattleOngoing;
+    };
+
+}

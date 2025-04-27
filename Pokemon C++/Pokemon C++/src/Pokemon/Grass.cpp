@@ -7,19 +7,31 @@
 #include "Grass.hpp"
 #include "PokemonType.hpp"
 #include <iostream>
+#include <vector>
 
-Grass caveGrass
+namespace N_Pokemon
 {
-    80,
-    {{"Zubat", PokemonType::Normal, 25}, {"Geodude", PokemonType::Rock, 45}},
-    "Cave"
-  
-};
 
-Grass forestGrass
-{
-    80,
-    {{"Zubat", PokemonType::Normal, 25}, {"Caterpie", PokemonType::Bug, 12}, {"Pidgey", PokemonType::Flying, 20}},
-    "Cave"
-  
-};
+    Grass caveGrass
+    {
+        80,
+        {
+            {"Zubat", PokemonType::Normal, 25},
+            {"Geodude", PokemonType::Rock, 45}
+        },
+        "Cave"
+        
+    };
+
+    Grass forestGrass
+    {
+        80,
+        {
+            {"Zubat", PokemonType::Normal, 25},
+            {"Caterpie", PokemonType::Bug, 12},
+            {"Pidgey", PokemonType::Flying, 20}
+        },
+        "Cave"
+        
+    };
+}
