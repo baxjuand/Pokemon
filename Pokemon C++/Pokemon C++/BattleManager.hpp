@@ -5,6 +5,7 @@
 //  Created by David Bayona on 21/04/25.
 //
 #pragma once
+#include "BattleState.hpp"
 
 class Pokemon;
 class Player;
@@ -17,9 +18,13 @@ public:
     
 private:
     
-    void battle(Pokemon& playerPokemon, Pokemon& wildPokemon);
+    BattleState battleState;
     
-    void handleBattleOutcome (Player& player, bool playerWon);
+    void battle();
+    
+    void handleBattleOutcome ();
+    
+    void updateBattleState();
     
     
 };
