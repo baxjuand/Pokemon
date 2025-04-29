@@ -5,16 +5,19 @@
 //  Created by David Bayona on 13/04/25.
 //
 #pragma once
+#include "PokemonType.hpp"
 #include <string>
 using namespace std;
-
-enum class PokemonType;
 
 namespace N_Pokemon
 {
     class Pokemon
     {
+        
+    
+        
     public:
+        
         string name;
         PokemonType type;
         int health;
@@ -23,7 +26,7 @@ namespace N_Pokemon
         
         //Constructors
         Pokemon();
-        Pokemon(const string& p_name, PokemonType p_type, int p_health);
+        Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower);
         Pokemon(const Pokemon &other);
         
         //Destructor

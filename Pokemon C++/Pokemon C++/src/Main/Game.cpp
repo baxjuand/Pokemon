@@ -24,9 +24,9 @@ namespace N_Main
     {
         forestGrass =
         {70,
-        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40),
-         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 35),
-         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 30)},
+        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40, 40 , 5),
+         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 35, 35, 2),
+         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 30, 30, 12)},
             "Forest"};
     }
 

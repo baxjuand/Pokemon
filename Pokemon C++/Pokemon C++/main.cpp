@@ -8,13 +8,12 @@
 #include <limits>
 #include <string>
 using namespace std;
-//using namespace N_Pokemon;
 
 
 int main ()
 {
     //Object creation
-    Pokemon bulbasaur("Bulbasaur", N_Pokemon::PokemonType::Grass, 100);
+    Pokemon bulbasaur("Bulbasaur", N_Pokemon::PokemonType::Grass, 100, 100, 13);
     Player player("Juanda", bulbasaur);
     N_Character::ProfessorOak professorOak("Professor Oak");
     N_Main::Game game;

@@ -8,10 +8,11 @@
 //#pragma once
 #ifndef myGrass
 #define myGrass
-#include "Pokemon.hpp"
+#include "../../include/Pokemon/Pokemon.hpp"
 #include <string>
 #include <vector>
 using namespace std;
+
 
 namespace N_Pokemon
 {
@@ -22,6 +23,7 @@ namespace N_Pokemon
         int encounterRate;
         vector <Pokemon> wildPokemonList;
         string environmentType;
+        
         
     };
 }
