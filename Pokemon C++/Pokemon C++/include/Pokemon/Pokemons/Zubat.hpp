@@ -16,6 +16,8 @@ namespace N_Pokemon
         public:
             
             Zubat();
+            
+        private:
             void supersonic(Pokemon& target);
             
         };
