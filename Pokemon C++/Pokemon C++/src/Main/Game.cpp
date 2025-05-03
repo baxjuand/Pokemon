@@ -64,7 +64,7 @@ namespace N_Main
                     
                     battleManager.startBattle(player, encounteredPokemon);
                     
-                    cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
+                    cout << "A wild " << encounteredPokemon.getName() << " appeared!" << endl;
                     break;
                 }
                 
@@ -72,7 +72,7 @@ namespace N_Main
                 {
                     cout << "You enter a PokéCenter" << endl;
                     player.chosenPokemon.heal();
-                    cout << player.chosenPokemon.name << "'s health is fully restored!!" << endl;
+                    cout << player.chosenPokemon.getName() << "'s health is fully restored!!" << endl;
                     break;
                 }
                     

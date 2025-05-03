@@ -46,6 +46,9 @@ enum class PokemonType;
         //Heal method
         void heal();
         
+        //Name Getter
+        const string& getName();
+        
     };
 }
 
