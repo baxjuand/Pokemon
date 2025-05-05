@@ -19,14 +19,18 @@ namespace N_Pokemon
         name = "Unknown";
         type = PokemonType::Normal;
         health = 20;
+        maxHealth = 20;
+        attackPower = 10;
     }
 
     //Parametrized constructor
-    Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health)
+    Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower)
     {
         name = p_name;
         type = p_type;
         health = p_health;
+        maxHealth = p_maxHealth;
+        attackPower = p_attackPower;
     }
 
     //Copy constructor
@@ -35,6 +39,8 @@ namespace N_Pokemon
         name = other.name;
         type = other.type;
         health = other.health;
+        maxHealth = other.maxHealth;
+        attackPower = other.attackPower;
         
     }
 

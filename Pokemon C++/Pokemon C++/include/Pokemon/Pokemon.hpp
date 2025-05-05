@@ -8,10 +8,12 @@
 #include <string>
 using namespace std;
 
-enum class PokemonType;
 
 namespace N_Pokemon
 {
+
+enum class PokemonType;
+
     class Pokemon
     {
     public:
@@ -23,7 +25,7 @@ namespace N_Pokemon
         
         //Constructors
         Pokemon();
-        Pokemon(const string& p_name, PokemonType p_type, int p_health);
+        Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower);
         Pokemon(const Pokemon &other);
         
         //Destructor
