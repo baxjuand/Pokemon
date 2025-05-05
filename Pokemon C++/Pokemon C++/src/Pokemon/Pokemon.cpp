@@ -24,7 +24,7 @@ namespace N_Pokemon
     }
 
     //Parametrized constructor
-    Pokemon::Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower)
+    Pokemon::Pokemon(const string &p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower)
     {
         name = p_name;
         type = p_type;
@@ -34,7 +34,7 @@ namespace N_Pokemon
     }
 
     //Copy constructor
-    Pokemon::Pokemon(const Pokemon& other)
+    Pokemon::Pokemon(const Pokemon &other)
     {
         name = other.name;
         type = other.type;
@@ -50,15 +50,15 @@ namespace N_Pokemon
         
     }
 
-    //Attack Function
-    void Pokemon::attack(Pokemon& target)
+    /*//Attack Function
+    void Pokemon::attack(Pokemon &target)
     {
         int damage = attackPower;
         
         cout << name << " attacks " << target.name << "for " << damage << "damage!" << endl;
         
         target.takeDamage(damage);
-    }
+    }*/
 
     //Take Damage Function
     void Pokemon::takeDamage(int damage)

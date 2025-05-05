@@ -23,5 +23,10 @@ namespace N_Pokemon
         target.takeDamage(20);
     }
     
+    void Bulbasaur::attack(Pokemon *target)
+    {
+        vineWhip(*target);
+    }
+    
     }
 }

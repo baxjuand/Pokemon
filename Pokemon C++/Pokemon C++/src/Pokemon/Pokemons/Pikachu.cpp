@@ -23,6 +23,11 @@ namespace N_Pokemon
         target.takeDamage(20);
     }
     
+    void Pikachu::attack(Pokemon *target)
+    {
+        thunderShock(*target);
+    }
+    
     }
 }
  

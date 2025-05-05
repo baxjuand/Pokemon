@@ -27,13 +27,13 @@ enum class PokemonType;
         
         //Constructors
         Pokemon();
-        Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower);
+        Pokemon(const string &p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower);
         Pokemon(const Pokemon &other);
         
         //Destructor
         ~Pokemon();
         
-        void attack(Pokemon& target);
+        virtual void attack(Pokemon *target) = 0;
         
         //Take Damage function
         void takeDamage(int damage);

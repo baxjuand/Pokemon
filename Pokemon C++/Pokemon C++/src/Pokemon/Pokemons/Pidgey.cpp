@@ -22,5 +22,10 @@ namespace N_Pokemon
         target.takeDamage(20);
     }
     
+    void Pidgey::attack(Pokemon *target)
+    {
+        wingAttack(*target);
+    }
+    
     }
 }
