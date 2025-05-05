@@ -24,9 +24,9 @@ namespace N_Main
     {
         forestGrass =
         {70,
-        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40),
-         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 35),
-         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 30)},
+        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40, 40, 5),
+         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 12, 12, 2),
+         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 25, 25, 12)},
             "Forest"};
     }
 
@@ -64,7 +64,7 @@ namespace N_Main
                     
                     battleManager.startBattle(player, encounteredPokemon);
                     
-                    cout << "A wild " << encounteredPokemon.name << " appeared!" << endl;
+                    cout << "A wild " << encounteredPokemon.getName() << " appeared!" << endl;
                     break;
                 }
                 
@@ -72,7 +72,7 @@ namespace N_Main
                 {
                     cout << "You enter a PokéCenter" << endl;
                     player.chosenPokemon.heal();
-                    cout << player.chosenPokemon.name << "'s health is fully restored!!" << endl;
+                    cout << player.chosenPokemon.getName() << "'s health is fully restored!!" << endl;
                     break;
                 }
                     

@@ -82,5 +82,11 @@ namespace N_Pokemon
         health = maxHealth;
     }
 
+    //Get Pokemon Name
+    string Pokemon::getName()
+    {
+        return name;
+    }
+
 }
 

@@ -21,6 +21,7 @@ namespace N_Pokemon
         Rock,
         Bug,
         Flying,
+        Poison,
         MaxValue = 0xff //Optimization for the compiler. Good optimization practice.
     };
 }
