@@ -16,11 +16,16 @@ namespace N_Pokemon
     {
     
     Zubat::Zubat() : Pokemon("Zubat", PokemonType::Poison, 100, 100, 20) {}
-    void Zubat::supersonic(Pokemon &target)
+    void Zubat::supersonic(Pokemon *target)
     {
-        cout << name << " uses Thunder Shock on " << target.getName() << endl;
-        target.takeDamage(20);
+        cout << name << " uses Thunder Shock on " << target->getName() << endl;
+        target->takeDamage(20);
 
+    }
+    
+    void Zubat::attack(Pokemon *target)
+    {
+        supersonic(target);
     }
     
     }

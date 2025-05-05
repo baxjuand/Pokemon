@@ -1,5 +1,5 @@
 //
-//  Pidgey.hpp
+//  Caterpie.hpp
 //  Pokemon C++
 //
 //  Created by David Bayona on 28/04/25.
@@ -11,14 +11,14 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Pidgey : public Pokemon
+        class Charmander : public Pokemon
         {
         public:
             
-            Pidgey();
+            Charmander();
             
         private:
-            void wingAttack(Pokemon *target);
+            void bugBite(Pokemon  *target);
             void attack(Pokemon *target) override;
         };
     }

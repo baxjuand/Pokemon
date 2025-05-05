@@ -49,16 +49,6 @@ namespace N_Pokemon
         
     }
 
-    //Attack Function
-    void Pokemon::attack(Pokemon& target)
-    {
-        int damage = attackPower;
-        
-        cout << name << " attacks " << target.name << "for " << damage << "damage!" << endl;
-        
-        target.takeDamage(damage);
-    }
-
     //Take Damage Function
     void Pokemon::takeDamage(int damage)
     {
