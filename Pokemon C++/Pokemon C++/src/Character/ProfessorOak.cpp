@@ -11,6 +11,7 @@
 #include <iostream>
 using namespace std;
 using namespace N_Utility;
+using namespace N_Player;
 
 namespace N_Character {
 

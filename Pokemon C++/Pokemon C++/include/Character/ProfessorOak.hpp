@@ -6,8 +6,6 @@
 //
 #pragma once
 #include <string>
-using namespace std;
-using namespace N_Player;
 
 namespace N_Character
 {
@@ -19,16 +17,16 @@ namespace N_Character
         int choice;
         
         //Parametrized constructor
-        ProfessorOak(const string& p_name);
+        ProfessorOak(const string &p_name);
         
         //Function text to greet the player
-        void greetPlayer(Player& player);
+        void greetPlayer(N_Player::Player &player);
         
         //Function to offer choices to the player
-        void offerPokemonChoices(Player& player);
+        void offerPokemonChoices(N_Player::Player &player);
         
         //Function to introduce main quest
-        void explainMainQuest(Player& player);
+        void explainMainQuest(N_Player::Player &player);
     };
 }
 

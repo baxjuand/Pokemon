@@ -11,7 +11,6 @@
 #include "Pokemon.hpp"
 #include <string>
 #include <vector>
-using namespace std;
 
 namespace N_Pokemon
 {

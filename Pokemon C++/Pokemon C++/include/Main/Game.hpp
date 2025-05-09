@@ -6,18 +6,17 @@
 //
 #pragma once
 #include "Grass.hpp"
-using namespace N_Player;
 
 namespace N_Main
 {
     class Game
     {
     private:
-        Grass forestGrass;
+       N_Pokemon::Grass forestGrass;
         
     public:
         Game();
-        void gameLoop(Player& player);
+        void gameLoop(N_Player::Player &player);
         
     };
 }

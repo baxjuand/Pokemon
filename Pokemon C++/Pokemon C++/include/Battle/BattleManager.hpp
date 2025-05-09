@@ -8,8 +8,8 @@
 #include "BattleState.hpp"
 #include "Player.hpp"
 
-using namespace N_Player;
-using namespace N_Pokemon;
+//using namespace N_Player;
+//using namespace N_Pokemon;
 
 namespace N_Battle
 {
@@ -18,7 +18,7 @@ namespace N_Battle
         
     public:
         
-        void startBattle(Player& player, Pokemon& wildPokemon);
+        void startBattle(N_Player::Player& player,N_Pokemon::Pokemon& wildPokemon);
         
     private:
         
