@@ -17,10 +17,15 @@ namespace N_Pokemon
     
     Caterpie::Caterpie() : Pokemon("Caterpie", PokemonType::Bug, 100, 100, 10) {}
     
-    void Caterpie::bugBite(Pokemon &target)
+    void Caterpie::bugBite(Pokemon *target)
     {
-        cout << name << " uses Bug Bite on " << target.getName() << endl;
-        target.takeDamage(20);
+        cout << name << " uses Bug Bite on " << target->getName() << endl;
+        target->takeDamage(20);
+    }
+    
+    void Caterpie::attack(Pokemon *target)
+    {
+        bugBite(target);
     }
     
     }

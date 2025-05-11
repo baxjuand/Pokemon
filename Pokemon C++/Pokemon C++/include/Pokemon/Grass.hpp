@@ -19,7 +19,7 @@ namespace N_Pokemon
     {
         
         int encounterRate;
-        vector <Pokemon> wildPokemonList;
+        vector  <Pokemon*> wildPokemonList;
         string environmentType;
         
     };

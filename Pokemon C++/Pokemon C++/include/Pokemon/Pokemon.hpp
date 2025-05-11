@@ -33,7 +33,7 @@ enum class PokemonType;
         //Destructor
         ~Pokemon();
         
-        void attack(Pokemon& target);
+        virtual void attack(Pokemon *target) = 0;
         
         //Take Damage function
         void takeDamage(int damage);

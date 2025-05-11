@@ -18,7 +18,8 @@ namespace N_Pokemon
             Bulbasaur();
             
         private:
-            void vineWhip(Pokemon& target);
+            void vineWhip(Pokemon *target);
+            void attack(Pokemon *target) override;
             
         };
     }

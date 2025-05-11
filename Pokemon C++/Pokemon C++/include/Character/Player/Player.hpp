@@ -16,7 +16,7 @@ namespace N_Player
     {
     public:
         string name;
-        N_Pokemon::Pokemon chosenPokemon;
+        N_Pokemon::Pokemon *chosenPokemon;
         
         
         //Constructors

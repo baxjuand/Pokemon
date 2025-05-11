@@ -19,7 +19,7 @@ namespace N_Battle
 {
     void BattleManager::startBattle(Player &player, Pokemon &wildPokemon)
     {
-        battleState.playerPokemon = &player.chosenPokemon;
+        battleState.playerPokemon = player.chosenPokemon;
         battleState.wildPokemon = &wildPokemon;
         battleState.isPlayerTurn = true;
         battleState.isBattleOngoing = true;
@@ -38,12 +38,12 @@ namespace N_Battle
             
             if (battleState.isPlayerTurn)
             {
-                battleState.playerPokemon->attack(*battleState.wildPokemon);
+                battleState.playerPokemon->attack(battleState.wildPokemon);
             }
             
             else
             {
-                battleState.wildPokemon->attack(*battleState.playerPokemon);
+                battleState.wildPokemon->attack(battleState.playerPokemon);
             }
             
             updateBattleState();
@@ -96,6 +96,7 @@ namespace N_Battle
             battleState.isBattleOngoing = false;
         }
     }
+
 }
 
 

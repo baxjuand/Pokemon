@@ -7,12 +7,17 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Pokemon.hpp"
+#include "Charmander.hpp"
+#include "Bulbasaur.hpp"
+#include "Squirtle.hpp"
+#include "Pikachu.hpp"
 #include "Player.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
 using namespace N_Pokemon;
+using namespace N_Pokemons;
 
 namespace N_Player
 {
@@ -21,19 +26,16 @@ namespace N_Player
     Player::Player()
     {
         name = "Trainer";
-        chosenPokemon = Pokemon();
     }
 
     Player::Player(const string &p_name, const Pokemon &p_chosenPokemon)
     {
         name = p_name;
-        chosenPokemon = p_chosenPokemon;
     }
 
     Player::Player(const Player &other)
     {
         name = other.name;
-        chosenPokemon = other.chosenPokemon;
     }
 
     //Function to Choose Pokémon
@@ -43,32 +45,32 @@ namespace N_Player
         {
             case PokemonChoice::Charmander:
             {
-                chosenPokemon = Pokemon("Charmander", N_Pokemon::PokemonType::Fire, 100, 100, 13);
+                chosenPokemon = new Charmander();
                 break;
             }
                     
             case PokemonChoice::Bulbasaur:
             {
-                chosenPokemon = Pokemon("Bulbasaur", N_Pokemon::PokemonType::Grass, 100, 100, 13);
+                chosenPokemon = new Bulbasaur();
                 break;
 
             }
                     
             case PokemonChoice::Squirtle:
             {
-                chosenPokemon = Pokemon("Squirtle", N_Pokemon::PokemonType::Water, 100, 100, 13);
+                chosenPokemon = new Squirtle();
                 break;
             }
                    
             default:
             {
-                chosenPokemon = Pokemon("Pikachu", N_Pokemon::PokemonType::Electric, 100, 100, 13);
+                chosenPokemon = new Pikachu();
                 break;
             }
                     
         }
         
-        cout << name << ", you chose " << chosenPokemon.getName() << endl;
+        cout << name << ", you chose " << chosenPokemon->getName() << endl;
         N_Utility::Utility::waitForEnter();
     }
 }

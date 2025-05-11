@@ -6,6 +6,9 @@
 //
 #include "PokemonType.hpp"
 #include "Pokemon.hpp"
+#include "Pidgey.hpp"
+#include "Caterpie.hpp"
+#include "Zubat.hpp"
 #include "Player.hpp"
 #include "Game.hpp"
 #include "Utility.hpp"
@@ -17,6 +20,7 @@ using namespace std;
 using namespace N_Player;
 using namespace N_Battle;
 using namespace N_Pokemon;
+using namespace N_Pokemons;
 
 namespace N_Main
 {
@@ -24,10 +28,17 @@ namespace N_Main
     {
         forestGrass =
         {70,
-        {Pokemon("Pidgey", N_Pokemon::PokemonType::Normal, 40, 40, 5),
-         Pokemon("Caterpie", N_Pokemon::PokemonType::Bug, 12, 12, 2),
-         Pokemon("Zubat", N_Pokemon::PokemonType::Flying, 25, 25, 12)},
+        {
+            new Pidgey(),
+            new Caterpie(),
+            new Zubat()
+        },
             "Forest"};
+    }
+
+    Game::~Game()
+    {
+        delete wildPokemon;
     }
 
     void Game::gameLoop(Player& player)
@@ -60,19 +71,19 @@ namespace N_Main
                 case 1:
                 {
                     WildEncounterManager encounterManager;
-                    Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                    Pokemon *encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
                     
-                    battleManager.startBattle(player, encounteredPokemon);
+                    battleManager.startBattle(player, *encounteredPokemon);
                     
-                    cout << "A wild " << encounteredPokemon.getName() << " appeared!" << endl;
+                    cout << "A wild " << encounteredPokemon->getName() << " appeared!" << endl;
                     break;
                 }
                 
                 case 2:
                 {
                     cout << "You enter a PokéCenter" << endl;
-                    player.chosenPokemon.heal();
-                    cout << player.chosenPokemon.getName() << "'s health is fully restored!!" << endl;
+                    player.chosenPokemon->heal();
+                    cout << player.chosenPokemon->getName() << "'s health is fully restored!!" << endl;
                     break;
                 }
                     

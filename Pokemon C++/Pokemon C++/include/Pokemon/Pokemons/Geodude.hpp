@@ -1,8 +1,8 @@
 //
-//  Pidgey.hpp
+//  Geodude.hpp
 //  Pokemon C++
 //
-//  Created by David Bayona on 28/04/25.
+//  Created by David Bayona on 29/04/25.
 //
 #pragma once
 #include "Pokemon.hpp"
@@ -11,15 +11,16 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-        class Pidgey : public Pokemon
+        class Geodude : public Pokemon
         {
         public:
             
-            Pidgey();
+            Geodude();
             
         private:
-            void wingAttack(Pokemon *target);
+            void rockSlide(Pokemon *target);
             void attack(Pokemon *target) override;
         };
     }
 }
+

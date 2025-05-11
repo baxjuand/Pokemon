@@ -17,10 +17,15 @@ namespace N_Pokemon
 
     Squirtle::Squirtle() : Pokemon("Squirtle", PokemonType::Water, 100, 100, 35) {}
 
-    void Squirtle::waterSplash(Pokemon &target)
+    void Squirtle::waterSplash(Pokemon *target)
     {
-        cout << name << " uses Water Splash on " << target.getName() << endl;
-        target.takeDamage(20);
+        cout << name << " uses Water Splash on " << target->getName() << endl;
+        target->takeDamage(20);
+    }
+    
+    void Squirtle::attack(Pokemon *target)
+    {
+        waterSplash(target);
     }
 
     }

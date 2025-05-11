@@ -6,18 +6,24 @@
 //
 #include "Grass.hpp"
 #include "PokemonType.hpp"
+#include "Zubat.hpp"
+#include "Geodude.hpp"
+#include "Caterpie.hpp"
+#include "Pidgey.hpp"
 #include <iostream>
 #include <vector>
 
 namespace N_Pokemon
 {
 
+using namespace N_Pokemons;
+
     Grass caveGrass
     {
         80,
         {
-            {"Zubat", PokemonType::Normal, 25, 25, 12},
-            {"Geodude", PokemonType::Rock, 45, 45, 18}
+            new Zubat(),
+            new Geodude()
         },
         "Cave"
         
@@ -27,9 +33,10 @@ namespace N_Pokemon
     {
         80,
         {
-            {"Zubat", PokemonType::Normal, 25, 25, 12},
-            {"Caterpie", PokemonType::Bug, 12, 12, 2},
-            {"Pidgey", PokemonType::Flying, 40, 40, 5}
+            new Zubat(),
+            new Caterpie(),
+            new Pidgey()
+            
         },
         "Cave"
         

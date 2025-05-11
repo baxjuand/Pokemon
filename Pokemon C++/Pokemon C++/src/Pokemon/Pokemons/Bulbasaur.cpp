@@ -17,10 +17,15 @@ namespace N_Pokemon
     
     Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", PokemonType::Grass, 100, 100, 35) {}
     
-    void Bulbasaur::vineWhip(Pokemon &target)
+    void Bulbasaur::vineWhip(Pokemon *target)
     {
-        cout << name << " uses Vine Whip on " << target.getName() << endl;
-        target.takeDamage(20);
+        cout << name << " uses Vine Whip on " << target->getName() << endl;
+        target->takeDamage(20);
+    }
+    
+    void Bulbasaur::attack(Pokemon *target)
+    {
+        vineWhip(target);
     }
     
     }
