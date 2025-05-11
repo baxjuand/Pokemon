@@ -5,10 +5,12 @@
 //  Created by David Bayona on 29/04/25.
 //
 #include "Bulbasaur.hpp"
+#include "utility.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
@@ -20,7 +22,18 @@ namespace N_Pokemon
     void Bulbasaur::vineWhip(Pokemon *target)
     {
         cout << name << " uses Vine Whip on " << target->getName() << endl;
-        target->takeDamage(20);
+        Utility::waitForEnter();
+        
+        target->takeDamage(attackPower);
+        
+        if (target->isFainted())
+        {
+            cout << target->getName() << " fainted!" << endl;
+        }
+        else
+        {
+            cout << target->getName() << " HP: " << target->getHealth() << endl;
+        }
     }
     
     void Bulbasaur::attack(Pokemon *target)

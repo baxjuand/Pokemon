@@ -47,6 +47,9 @@ enum class PokemonType;
         //Get Pokemon Name
         string getName();
         
+        //Get Pokemon Health
+        int getHealth();
+        
     };
 }
 

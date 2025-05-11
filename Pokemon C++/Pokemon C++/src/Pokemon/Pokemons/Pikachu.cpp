@@ -5,10 +5,12 @@
 //  Created by David Bayona on 27/04/25.
 //
 #include "../../../include/Pokemon/Pokemons/Pikachu.hpp"
+#include "utility.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
@@ -20,7 +22,18 @@ namespace N_Pokemon
     void Pikachu::thunderShock(Pokemon *target)
     {
         cout << name << " uses Thunder Shock on " << target->getName() << endl;
-        target->takeDamage(20);
+        Utility::waitForEnter();
+        
+        target->takeDamage(attackPower);
+        
+        if (target->isFainted())
+        {
+            cout << target->getName() << " fainted!" << endl;
+        }
+        else
+        {
+            cout << target->getName() << " HP: " << target->getHealth() << endl;
+        }
     }
     
     void Pikachu::attack(Pokemon *target)

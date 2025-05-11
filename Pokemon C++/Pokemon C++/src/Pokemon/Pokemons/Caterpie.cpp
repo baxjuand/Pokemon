@@ -5,10 +5,12 @@
 //  Created by David Bayona on 28/04/25.
 //
 #include "Caterpie.hpp"
+#include "Utility.hpp"
 #include "PokemonType.hpp"
 #include <iostream>
 
 using namespace std;
+using namespace N_Utility;
 
 namespace N_Pokemon
 {
@@ -20,7 +22,18 @@ namespace N_Pokemon
     void Caterpie::bugBite(Pokemon *target)
     {
         cout << name << " uses Bug Bite on " << target->getName() << endl;
-        target->takeDamage(20);
+        Utility::waitForEnter();
+        
+        target->takeDamage(attackPower);
+        
+        if (target->isFainted())
+        {
+            cout << target->getName() << " fainted!" << endl;
+        }
+        else
+        {
+            cout << target->getName() << " HP: " << target->getHealth() << endl;
+        }
     }
     
     void Caterpie::attack(Pokemon *target)
