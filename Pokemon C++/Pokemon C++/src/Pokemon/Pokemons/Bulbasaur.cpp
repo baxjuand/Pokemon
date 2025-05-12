@@ -6,6 +6,7 @@
 //
 #include "Bulbasaur.hpp"
 #include "utility.hpp"
+#include "Move.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
@@ -17,9 +18,13 @@ namespace N_Pokemon
     namespace N_Pokemons
     {
     
-    Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", PokemonType::Grass, 100, 100, 35) {}
+    Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", PokemonType::Grass, 100, 100, 35,
+    {
+        Move("Vine Whip", 25),
+        Move("Tackle", 10)
+    }) {}
     
-    void Bulbasaur::vineWhip(Pokemon *target)
+    /*void Bulbasaur::vineWhip(Pokemon *target)
     {
         cout << name << " uses Vine Whip on " << target->getName() << endl;
         Utility::waitForEnter();
@@ -34,11 +39,27 @@ namespace N_Pokemon
         {
             cout << target->getName() << " HP: " << target->getHealth() << endl;
         }
-    }
+    }*/
     
-    void Bulbasaur::attack(Pokemon *target)
+    void Bulbasaur::attack(Move selectedMove, Pokemon *target)
     {
-        vineWhip(target);
+        Pokemon::attack(selectedMove, target);
+        
+        if (selectedMove.name == "Vine Whip")
+        {
+            int secondHitChance = rand() % 2;
+            
+            if (secondHitChance == 1)
+            {
+                Pokemon::attack(selectedMove, target);
+                cout << name << "hits again with a second " << selectedMove.name << endl;
+            }
+            else
+            {
+                cout << target->getName() << " dodged the second hit" << endl;
+            }
+        }
+        
     }
     
     }

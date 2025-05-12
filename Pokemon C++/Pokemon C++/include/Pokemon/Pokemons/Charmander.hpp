@@ -18,8 +18,8 @@ namespace N_Pokemon
             Charmander();
             
         private:
-            void flameThrower(Pokemon *target);
-            void attack(Pokemon *target) override;
+            //void flameThrower(Pokemon *target);
+            void attack(Move selectedMove, Pokemon *target) override;
         };
     }
 }

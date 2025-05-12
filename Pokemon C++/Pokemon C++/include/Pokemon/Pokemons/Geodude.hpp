@@ -18,8 +18,8 @@ namespace N_Pokemon
             Geodude();
             
         private:
-            void rockSlide(Pokemon *target);
-            void attack(Pokemon *target) override;
+            //void rockSlide(Pokemon *target);
+            void attack(Move selectedMove, Pokemon *target) override;
         };
     }
 }

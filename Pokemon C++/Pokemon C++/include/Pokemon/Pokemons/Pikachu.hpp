@@ -18,8 +18,8 @@ namespace N_Pokemon
             Pikachu();
             
         private:
-            void thunderShock(Pokemon *target);
-            void attack(Pokemon *target) override;
+            //void thunderShock(Pokemon *target);
+            void attack(Move selectedMove, Pokemon *target) override;
             
         };
     }

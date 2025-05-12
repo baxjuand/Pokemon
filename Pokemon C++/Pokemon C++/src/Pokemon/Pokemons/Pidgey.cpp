@@ -6,6 +6,7 @@
 //
 #include "Pidgey.hpp"
 #include "utility.hpp"
+#include "Move.hpp"
 #include "PokemonType.hpp"
 #include <iostream>
 
@@ -16,9 +17,14 @@ namespace N_Pokemon
 {
     namespace N_Pokemons
     {
-    Pidgey::Pidgey() : Pokemon("Pidgey", PokemonType::Flying, 100, 100, 35) {}
+    Pidgey::Pidgey() : Pokemon("Pidgey", PokemonType::Flying, 100, 100, 35,
+    {
+        Move("wing Attack", 20),
+        Move("Gust", 15),
+        Move("Tackle", 10)
+    }) {}
     
-    void Pidgey::wingAttack(Pokemon *target)
+    /*void Pidgey::wingAttack(Pokemon *target)
     {
         cout << name << " uses Wing Attack on " << target->getName() << endl;
         Utility::waitForEnter();
@@ -33,11 +39,11 @@ namespace N_Pokemon
         {
             cout << target->getName() << " HP: " << target->getHealth() << endl;
         }
-    }
+    }*/
     
-    void Pidgey::attack(Pokemon *target)
+    void Pidgey::attack(Move selectedMove,Pokemon *target)
     {
-        wingAttack(target);
+        selectAndUseMove(target);
     }
     
     }

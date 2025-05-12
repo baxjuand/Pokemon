@@ -20,6 +20,7 @@ namespace N_Battle
         
         void startBattle(N_Player::Player& player,N_Pokemon::Pokemon& wildPokemon);
         
+        
     private:
         
         BattleState battleState;

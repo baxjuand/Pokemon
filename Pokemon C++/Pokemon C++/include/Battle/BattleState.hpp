@@ -15,8 +15,8 @@ namespace N_Battle
 
     struct BattleState
     {
-        Pokemon* playerPokemon;
-        Pokemon* wildPokemon;
+        Pokemon *playerPokemon;
+        Pokemon *wildPokemon;
         bool isPlayerTurn;
         bool isBattleOngoing;
     };

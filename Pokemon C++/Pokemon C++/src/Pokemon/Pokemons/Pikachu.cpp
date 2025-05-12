@@ -6,6 +6,7 @@
 //
 #include "../../../include/Pokemon/Pokemons/Pikachu.hpp"
 #include "utility.hpp"
+#include "Move.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
@@ -17,9 +18,14 @@ namespace N_Pokemon
     namespace N_Pokemons
     {
     
-    Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::Electric, 100, 100, 20) {}
+    Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::Electric, 100, 100, 40,
+    {
+        Move("Thunder Shock", 25),
+        Move("Thunder Bolt", 80),
+        Move("Tackle", 15)
+    }) {}
     
-    void Pikachu::thunderShock(Pokemon *target)
+    /*void Pikachu::thunderShock(Pokemon *target)
     {
         cout << name << " uses Thunder Shock on " << target->getName() << endl;
         Utility::waitForEnter();
@@ -34,11 +40,26 @@ namespace N_Pokemon
         {
             cout << target->getName() << " HP: " << target->getHealth() << endl;
         }
-    }
+    }*/
     
-    void Pikachu::attack(Pokemon *target)
+    void Pikachu::attack(Move selectedMove, Pokemon *target)
     {
-        thunderShock(target);
+        if (selectedMove.name == "Thunder Bolt")
+        {
+            if (rand() % 100 < 80)
+            {
+                Pokemon::attack(selectedMove, target);
+                cout << " and it hits successfuly!" << endl;
+            }
+            else
+            {
+                cout << " but it failed!" << endl;
+            }
+        }
+        else
+        {
+            Pokemon::attack(selectedMove, target);
+        }
     }
     
     }

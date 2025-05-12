@@ -38,12 +38,12 @@ namespace N_Battle
             
             if (battleState.isPlayerTurn)
             {
-                battleState.playerPokemon->attack(battleState.wildPokemon);
+                battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
             }
             
             else
             {
-                battleState.wildPokemon->attack(battleState.playerPokemon);
+                battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
             }
             
             updateBattleState();

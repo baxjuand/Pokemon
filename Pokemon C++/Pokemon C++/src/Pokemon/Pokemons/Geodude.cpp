@@ -6,6 +6,7 @@
 //
 #include "Geodude.hpp"
 #include "utility.hpp"
+#include "Move.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
@@ -17,9 +18,13 @@ namespace N_Pokemon
     namespace N_Pokemons
     {
     
-    Geodude::Geodude() : Pokemon("Geodude", PokemonType::Rock, 45, 45, 18) {}
+    Geodude::Geodude() : Pokemon("Geodude", PokemonType::Rock, 45, 45, 18,
+    {
+        Move("Rock Slide", 11),
+        Move("Tackle", 7)
+    }) {}
     
-    void Geodude::rockSlide(Pokemon *target)
+    /*void Geodude::rockSlide(Pokemon *target)
     {
         cout << name << " uses Rock Slide on " << target->getName() << endl;
         Utility::waitForEnter();
@@ -34,11 +39,11 @@ namespace N_Pokemon
         {
             cout << target->getName() << " HP: " << target->getHealth() << endl;
         }
-    }
+    }*/
     
-    void Geodude::attack(Pokemon *target)
+    void Geodude::attack(Move selectedMove, Pokemon *target)
     {
-        rockSlide(target);
+        selectAndUseMove(target);
     }
     
     }

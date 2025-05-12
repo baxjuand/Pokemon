@@ -6,13 +6,15 @@
 //
 #pragma once
 #include <string>
+#include <vector>
 using namespace std;
 
 
 namespace N_Pokemon
 {
 
-enum class PokemonType;
+    enum class PokemonType;
+    struct Move;
 
     class Pokemon
     {
@@ -22,24 +24,26 @@ enum class PokemonType;
         int health;
         int maxHealth;
         int attackPower;
+        vector<Move> moves;
         
     public:
         
         //Constructors
         Pokemon();
-        Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower);
+        Pokemon(const string& p_name, PokemonType p_type, int p_health, int p_maxHealth, int p_attackPower, vector<Move> moves);
         Pokemon(const Pokemon &other);
         
         //Destructor
         ~Pokemon();
         
-        virtual void attack(Pokemon *target) = 0;
+        virtual void attack(Move selectedMove, Pokemon *target) = 0;
         
         //Take Damage function
         void takeDamage(int damage);
         
         //Alive status check function
         bool isFainted() const;
+        
         
         //Heal method
         void heal();
@@ -49,6 +53,17 @@ enum class PokemonType;
         
         //Get Pokemon Health
         int getHealth();
+        
+        //Get Pokemon Attack Power
+        int getAttackPower();
+        
+        //Reduce Attack Power
+        void reduceAttackPower(int reducedDamage);
+        
+        void selectAndUseMove(Pokemon *target);
+        void printAvailableMoves();
+        int selectMove();
+        void useMove(Move selectedMove, Pokemon *target);
         
     };
 }
