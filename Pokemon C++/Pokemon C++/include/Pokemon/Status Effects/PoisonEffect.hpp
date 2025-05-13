@@ -1,20 +1,26 @@
 //
-//  ParalyzedEffect.hpp
+//  PoisonEffect.hpp
 //  Pokemon C++
 //
-//  Created by David Bayona on 11/05/25.
+//  Created by David Bayona on 12/05/25.
 //
 #pragma once
+//#include <iostream>
 #include "IStatusEffect.hpp"
 
 namespace N_Pokemon
 {
-    namespace N_StatusEffect
+    namespace  N_StatusEffect
     {
-        class ParalyzedEffect : public IStatusEffect
+        class PoisonEffect : public IStatusEffect
         {
         private:
-            int turnsLeft;
+            float poisonPercentageReduction = 0.3f;
+            int turnsLeft = 5;
+            int ticks = turnsLeft;
+            float hpReduced;
+            int hpToReduce;
+            
             
         public:
             void applyEffect(Pokemon *target) override;
@@ -23,7 +29,5 @@ namespace N_Pokemon
             void clearEffect(Pokemon *target) override;
         };
     }
-
 }
-
 

@@ -88,6 +88,12 @@ namespace N_Pokemon
         return health;
     }
 
+    // Get Pokemon Max Health
+    int Pokemon::getMaxHealth()
+    {
+        return maxHealth;
+    }
+
     //Get Pokemon Attack Power
     int Pokemon::getAttackPower()
     {
@@ -172,9 +178,9 @@ namespace N_Pokemon
     }
 
     //Clear Effect Definition
-    void clearEffect()
+    void Pokemon::clearEffect()
     {
-        
+        cout << "Effect cleared!" << endl;
     }
 
 }

@@ -54,6 +54,9 @@ namespace N_Pokemon
         //Get Pokemon Health
         int getHealth();
         
+        // Get Pokemon Max Health
+        int getMaxHealth();
+        
         //Get Pokemon Attack Power
         int getAttackPower();
         

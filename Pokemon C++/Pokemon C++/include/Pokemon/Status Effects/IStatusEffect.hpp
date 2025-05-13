@@ -5,11 +5,8 @@
 //  Created by David Bayona on 11/05/25.
 //
 #pragma once
-#include <iostream>
 #include <string>
 #include "Pokemon.hpp"
-
-using namespace std;
 
 namespace N_Pokemon
 {
