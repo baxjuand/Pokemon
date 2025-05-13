@@ -171,5 +171,11 @@ namespace N_Pokemon
         target->takeDamage(selectedMove.power);
     }
 
+    //Clear Effect Definition
+    void clearEffect()
+    {
+        
+    }
+
 }
 

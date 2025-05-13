@@ -64,6 +64,7 @@ namespace N_Pokemon
         void printAvailableMoves();
         int selectMove();
         void useMove(Move selectedMove, Pokemon *target);
+        void clearEffect();
         
     };
 }
