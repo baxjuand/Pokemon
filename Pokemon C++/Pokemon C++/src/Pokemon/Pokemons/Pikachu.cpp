@@ -8,6 +8,7 @@
 #include "utility.hpp"
 #include "Move.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
+#include "StatusEffectType.hpp"
 #include <iostream>
 
 using namespace std;
@@ -59,6 +60,14 @@ namespace N_Pokemon
         else
         {
             Pokemon::attack(selectedMove, target);
+        }
+        
+        if (selectedMove.name == "Thunder Shock")
+        {
+            if (target->canApplyEffect())
+            {
+                target->applyEffect(N_StatusEffects::StatusEffectType::Paralyzed);
+            }
         }
     }
     

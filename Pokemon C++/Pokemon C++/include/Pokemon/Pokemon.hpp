@@ -12,8 +12,15 @@ using namespace std;
 
 namespace N_Pokemon
 {
+    
+    namespace N_StatusEffects
+    {
+    class IStatusEffect;
+    enum class StatusEffectType;
+    }
 
     enum class PokemonType;
+    
     struct Move;
 
     class Pokemon
@@ -25,6 +32,8 @@ namespace N_Pokemon
         int maxHealth;
         int attackPower;
         vector<Move> moves;
+        N_StatusEffects::IStatusEffect* appliedEffect;
+        
         
     public:
         
@@ -68,6 +77,9 @@ namespace N_Pokemon
         int selectMove();
         void useMove(Move selectedMove, Pokemon *target);
         void clearEffect();
+        bool canAttack();
+        void applyEffect(N_StatusEffects::StatusEffectType effectToApply);
+        bool canApplyEffect();
         
     };
 }

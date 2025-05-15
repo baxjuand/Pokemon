@@ -6,10 +6,12 @@
 //
 #include <iostream>
 #include "ParalyzedEffect.hpp"
+#include "Pokemon.hpp"
+#include "StatusEffectType.hpp"
 
 namespace N_Pokemon
 {
-    namespace N_StatusEffect
+    namespace N_StatusEffects
     {
         void ParalyzedEffect::applyEffect(Pokemon *target)
         {

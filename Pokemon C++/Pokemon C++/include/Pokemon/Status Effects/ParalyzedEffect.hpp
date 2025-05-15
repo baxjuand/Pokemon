@@ -9,7 +9,7 @@
 
 namespace N_Pokemon
 {
-    namespace N_StatusEffect
+    namespace N_StatusEffects
     {
         class ParalyzedEffect : public IStatusEffect
         {
@@ -17,7 +17,7 @@ namespace N_Pokemon
             int turnsLeft;
             
         public:
-            void applyEffect(Pokemon *target) override;
+            void applyEffect(N_Pokemon::Pokemon *target) override;
             string getEffectName() override;
             bool turnEndEffect(Pokemon *target) override;
             void clearEffect(Pokemon *target) override;

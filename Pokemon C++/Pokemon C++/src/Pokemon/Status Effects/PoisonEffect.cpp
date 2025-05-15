@@ -11,7 +11,7 @@ using namespace std;
 
 namespace N_Pokemon
 {
-    namespace N_StatusEffect
+    namespace N_StatusEffects
     {
         
         void PoisonEffect::applyEffect(Pokemon *target)

@@ -34,14 +34,13 @@ namespace N_Battle
             
         while (battleState.isBattleOngoing)
         {
-            //playerPokemon.attack(wildPokemon);
             
-            if (battleState.isPlayerTurn)
+            if (battleState.isPlayerTurn && battleState.playerPokemon->canAttack())
             {
                 battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
             }
             
-            else
+            else if (battleState.wildPokemon->canAttack())
             {
                 battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
             }
@@ -57,15 +56,6 @@ namespace N_Battle
         
             handleBattleOutcome();
         
-            /*if (!playerPokemon.isFainted())
-            {
-                cout << playerPokemon.name << " has fainted! You loose the battle!" << endl;
-            }
-            
-            else
-            {
-                cout << "You defeated the wild " << wildPokemon.name << endl;
-            }*/
         
     }
 
